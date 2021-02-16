@@ -14,15 +14,17 @@ const disemvowel = () => {
 }
 
 const isPalindrome = () => {
-    const str = document.querySelector("#is-palindrome-input");
-    const p = document.querySelectorAll("#is-palindrome-p");
-    let result = "true"; 
-    for(let i = 0; i < str; i++) {
+    const str = document.querySelector("#is-palindrome-input").value;
+    const p = document.querySelector("#is-palindrome-p");
+    let result; 
+    for(let i = 0; i < str.length; i++) {
         if(str[i] === str[str.length - i - 1]) {
-            result = "false"
+            result = true
+        } else {
+            result = false
         }
     }
-    result = p.textContent;
+    p.textContent = result;
 }
 const sum = (arr) => {
     let sum = 0; 
