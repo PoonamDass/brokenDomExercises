@@ -82,23 +82,23 @@ const favoriteNumbers = () => {
 favoriteNumbers();
 
 const incrementCount = () => {
-    const countr = Number(document.querySelector("#click-count"));
-    counter.textContent = counter.textContent + 1;
+    const counter = document.querySelector("#click-count");
+    counter.textContent = Number(counter.textContent) + 1;
 }
 
 const reset = () => {
     const counter = document.querySelector("#click-count");
-    counter.displayContent = 0;
+    counter.textContent = 0;
 }
 
 const addItem = () => {
-    const shoppingList = document.querySelector("ul");
-    const input = document.querySelector(".add-item")
-    const item = input;
+    const shoppingList = document.querySelector(".shopping-list");
+    const input = document.querySelector("#add-item")
+    const item = input.value;
     const listItem = document.createElement("li");
-    listItem.textContent = item;
     shoppingList.appendChild(listItem)
-    input.value = "Empty";
+    listItem.textContent = item;
+    input.value = "";
 }
 
 const killButton = () => {
