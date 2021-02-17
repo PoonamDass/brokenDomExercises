@@ -61,11 +61,11 @@ const favoriteNumbers = () => {
     const onlyOddsOfNums = onlyOdds(arr);
     
     const sumOfFav = document.querySelector("#sum-of-favorite-nums");
-    sumOfFav.textContent = `Sum: ${sumOfNums}`; 
+    sumOfFav.textContent += sumOfNums; 
     
     
     const aveOfFav = document.querySelector("#average-of-favorite-nums");
-    aveOfFav.textContent = `Avg: ${averageOfNums}`; 
+    aveOfFav.textContent += averageOfNums; 
     
     const oddList = document.querySelector("#list-of-odd-favorite-nums");
     
