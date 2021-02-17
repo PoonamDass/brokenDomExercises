@@ -103,7 +103,7 @@ const addItem = () => {
 
 const killButton = () => {
     const button = document.querySelector("#kill-button");
-    button.removeChild(button)
+    button.parentNode.removeChild(button)
 
     const header = document.querySelector("#kill-button-header");
     header.innerText = "Yay you were victorious!"
