@@ -26,48 +26,58 @@ const isPalindrome = () => {
     }
     p.textContent = result;
 }
+
+
 const sum = (arr) => {
     let sum = 0; 
-    for(let i = 0; i <= arr.length; i++) {
-        const num = arr[i];
+    for(let i = 0; i < arr.length; i++) {
+        let num = arr[i];
         sum += num
     }
     return sum; 
 }
+
 const average = (arr) => {
-    arr = [1, 2, 3];
-    let sumOfNums = sums(arr) 
+    let sumOfNums = sum(arr) 
     return sumOfNums / arr.length; 
 }
 
 const onlyOdds = arr => {
-     arr.filter(num => num % 3 === 1)
+   return arr.filter(num => num % 2 ===1 )
+    
 }
 
 const favoriteNumbers = () => {
-    let list = Number(document.querySelector("#favorite-numbers < li").value);
+    let list = document.querySelectorAll("#favorite-numbers li");
     let arr = [];
-    list.forEach((listItem) => {
-        arr.push(listItem.textContent)
-    })
-    const sum = sum(arr);
-    const averageOfNums = average();
-    const onlyOddsOfNums = onlyOdds(arr);
-
-    const sumOfFav = Number(document.querySelector("#sum-of-favorite-nums"));
-    sumOfFav.textContent += sumOfNums; 
-
-    const aveOfFav = document.querySelector("#average-of-favorite-nums");
-    aveOfFav.textContent += averageOfNums; 
-
-    var oddList = document.querySelector("#is-palindrome-p");
+    list.forEach((listItem => {
+        let num = Number(listItem.textContent)
+        arr.push(num)
+    }))
     
-    const li = document.createElement("h1");
-    onlyOddsOfNums.each((odd) => {
-      li.inerText = odd;
-      oddList.removeChild(li);
+    
+    const sumOfNums = sum(arr);
+    const averageOfNums = average(arr);
+    const onlyOddsOfNums = onlyOdds(arr);
+    
+    const sumOfFav = document.querySelector("#sum-of-favorite-nums");
+    sumOfFav.textContent = `Sum: ${sumOfNums}`; 
+    
+    
+    const aveOfFav = document.querySelector("#average-of-favorite-nums");
+    aveOfFav.textContent = `Avg: ${averageOfNums}`; 
+    
+    const oddList = document.querySelector("#list-of-odd-favorite-nums");
+    
+    onlyOddsOfNums.forEach((odd) => {
+        let li = document.createElement("li");
+        li.innerText = odd;
+        oddList.appendChild(li);
+    
     });
 }
+
+
 
 favoriteNumbers();
 
